@@ -146,7 +146,7 @@ ISSVCSTARTUPTYPE="Automatic"
 
 ; Account for Integration Services: Domain\User or system account.
 
-ISSVCACCOUNT="NT AUTHORITY\NetworkService"
+ISSVCACCOUNT="<%= node['sql_server']['issvc_account'] %>"
 
 ; Controls the service startup type setting after the service has been created.
 
@@ -242,3 +242,7 @@ RSSVCSTARTUPTYPE="<%= node['sql_server']['rs_startup'] %>"
 ; Default value: "FilesOnly"
 
 RSINSTALLMODE="<%= node['sql_server']['rs_mode'] %>"
+
+; Specifies the account for Full-Text filter launcher service.
+
+FTSVCACCOUNT="<%= node['sql_server']['ftsv_account'] %>"
