@@ -1,6 +1,24 @@
 # sql_server Cookbook CHANGELOG
 This file is used to list changes made in each version of the sql_server cookbook.
 
+## 3.0.0 (2016-09-07)
+- Correct attribute to accept eula
+- Require Chef 12+
+- Testing updates
+
+## v2.6.2(2016-05-17)
+- README updates
+
+## v2.6.1(2016-05-17)
+- [PR #69](https://github.com/chef-cookbooks/sql_server/pull/69) Duplicate service restart
+- Clean up rake file, maintainers toml/markdown
+
+## v2.6.0(2016-05-17)
+- [PR #59](https://github.com/chef-cookbooks/sql_server/pull/59) Support Named Instances
+- [PR #61](https://github.com/chef-cookbooks/sql_server/pull/61) Restart Command For SQL Server
+- [PR #67](https://github.com/chef-cookbooks/sql_server/pull/67) Updates for Standard Edition
+- [PR #68](https://github.com/chef-cookbooks/sql_server/pull/68) Clarify remote install note
+
 ## v2.5.0(2016-02-12)
 - Enable multiple sysadmin names.
 - Removed the logic that auto generated node['sql_server']['server_sa_password'] and saved it to the node. The user will now need to set this to use the server recipe
