@@ -38,6 +38,10 @@ ACTION="Install"
 
 FEATURES=<%= node['sql_server']['feature_list'] %>
 
+; Specify the location where SQL Server Setup will obtain product updates. The valid values are "MU" to search Microsoft Update, a valid folder path, a relative path such as .\MyUpdates or a UNC share. By default SQL Server Setup will search Microsoft Update or a Windows Update service through the Window Server Update Services.
+
+UpdateSource="MU"
+
 ; Displays the command line parameters usage
 
 HELP="False"
@@ -52,7 +56,7 @@ QUIET="False"
 
 ; Setup will display progress only without any user interaction.
 
-QUIETSIMPLE="False"
+QUIETSIMPLE="<%= node['sql_server']['quietsimple'] %>"
 
 ; Specifies that Setup should install into WOW64. This command line argument is not supported on an IA64 or a 32-bit system.
 
@@ -64,7 +68,7 @@ ROLE="AllFeatures_WithDefaults"
 
 ; Detailed help for command line argument ENU has not been defined yet.
 
-ENU="True"
+ENU="<%= node['sql_server']['enu'] %>"
 
 ; Parameter that controls the user interface behavior. Valid values are Normal for the full UI, and AutoAdvance for a simplied UI.
 ; UIMode setting cannot be used in conjunction with /Q or /QS
@@ -73,6 +77,10 @@ ENU="True"
 ; Specify if errors can be reported to Microsoft to improve future SQL Server releases. Specify 1 or True to enable and 0 or False to disable this feature.
 
 ERRORREPORTING="False"
+
+; If this parameter is provided, then this computer will use Microsoft Update to check for updates.
+
+USEMICROSOFTUPDATE="True"
 
 ; Specify the root installation directory for native shared components.
 
@@ -143,6 +151,22 @@ AGTSVCSTARTUPTYPE="<%= node['sql_server']['agent_startup'] %>"
 ; Startup type for Integration Services.
 
 ISSVCSTARTUPTYPE="Automatic"
+
+; CM brick TCP communication port
+
+COMMFABRICPORT="0"
+
+; How matrix will use private networks
+
+COMMFABRICNETWORKLEVEL="0"
+
+; How inter brick communication will be protected
+
+COMMFABRICENCRYPTION="0"
+
+; TCP port used by the CM brick
+
+MATRIXCMBRICKCOMMPORT="0"
 
 ; Account for Integration Services: Domain\User or system account.
 
