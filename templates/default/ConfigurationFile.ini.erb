@@ -52,7 +52,7 @@ INDICATEPROGRESS="False"
 
 ; Setup will not display any user interface.
 
-<% <% if node['sql_server']['version'].start_with? '2014' %> %>
+<% if node['sql_server']['version'].start_with? '2014' %>
 ; QUIET="False"
 <% else %>
 QUIET="False"
