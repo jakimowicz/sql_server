@@ -50,17 +50,19 @@ HELP="False"
 
 INDICATEPROGRESS="False"
 
+<% if node['sql_server']['version'].start_with? '2014' %>
+; Setup will display progress only without any user interaction.
+
+QUIETSIMPLE="<%= node['sql_server']['quietsimple'] %>"
+<% else %>
 ; Setup will not display any user interface.
 
-<% if node['sql_server']['version'].start_with? '2014' %>
-; QUIET="False"
-<% else %>
 QUIET="False"
-<% end %>
 
 ; Setup will display progress only without any user interaction.
 
 QUIETSIMPLE="<%= node['sql_server']['quietsimple'] %>"
+<% end %>
 
 ; Specifies that Setup should install into WOW64. This command line argument is not supported on an IA64 or a 32-bit system.
 
