@@ -27,12 +27,16 @@ default['sql_server']['shared_wow_dir'] = 'C:\Program Files (x86)\Microsoft SQL 
 default['sql_server']['feature_list'] = 'SQLENGINE,REPLICATION,SNAC_SDK'
 default['sql_server']['agent_account'] =  'NT AUTHORITY\NETWORK SERVICE'
 default['sql_server']['agent_startup'] =  'Disabled'
+default['sql_server']['enu'] = 'True'
+default['sql_server']['quietsimple'] = 'False'
 default['sql_server']['rs_mode'] = 'FilesOnlyMode'
 default['sql_server']['rs_account'] = 'NT AUTHORITY\NETWORK SERVICE'
 default['sql_server']['rs_startup'] = 'Automatic'
 default['sql_server']['browser_startup'] = 'Disabled'
 default['sql_server']['sysadmins'] = ['Administrator']
 default['sql_server']['sql_account'] = 'NT AUTHORITY\NETWORK SERVICE'
+default['sql_server']['issvc_account'] = 'NT AUTHORITY\NetworkService'
+default['sql_server']['ftsv_account'] = 'NT AUTHORITY\LOCAL SERVICE'
 default['sql_server']['update_enabled'] = true # applies to SQL Server 2012 and later
 
 default['sql_server']['server']['installer_timeout'] = 1500
